@@ -1,0 +1,20 @@
+<div class="container">
+  <div id="post">
+    <% @user_blogs.each do |element| %>
+      <div class="post__card">
+        <div class="post__card_-" style="padding: 5px">
+          <div>
+            <div class="post__card_meta">
+              <p class="post__card_title"><%= element.title %></p>
+              <p class="post__card_alttitle"><%= element.description %></p>
+            </div>
+          </div>
+          <% if current_user %>
+            <%= link_to 'Edit', edit_blog_path(element), class: 'btn btn-success' %>
+            <%= link_to 'Delete', blog_path(element), method: :delete, class: 'btn btn-danger' %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

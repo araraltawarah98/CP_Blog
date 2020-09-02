@@ -1,0 +1,9 @@
+I"•(function() {
+  $(document).ready(function() {
+    return $.get("/blogs", data(function() {
+      return alert("OK");
+    }));
+  });
+
+}).call(this);
+:ET

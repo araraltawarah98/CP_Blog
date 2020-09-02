@@ -1,0 +1,17 @@
+I"(function() {
+  $(document).ready(function() {
+    return Rails.ajax({
+      url: "/blogs",
+      type: "get",
+      data: "dhjkasdhasjkdhasdkjas",
+      success: function() {
+        return {};
+      },
+      error: function() {
+        return {};
+      }
+    });
+  });
+
+}).call(this);
+:ET

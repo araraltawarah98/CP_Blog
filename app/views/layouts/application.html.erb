@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blogs</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="#">Blogs</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav" style="margin-left: auto">
+              <li class="nav-item active">
+                <% if !current_user.nil? %>
+                <a href = "/profile/<%= current_user.username %>"><%= current_user.username %> </a>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <% if user_signed_in? %>
+      <%= link_to 'Log_out', destroy_user_session_path, method: :delete %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

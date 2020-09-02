@@ -1,0 +1,33 @@
+<div class="container">
+  <div id="post">
+    <% @blogs.each do |element| %>
+      <div class="post__card">
+        <div class="post__card_-" style="padding: 5px">
+          <div>
+            <p class="post__card_title"><%= element.user.username %></p>
+            <div class="post__card_meta">
+              <p class="post__card_title"><%= element.title %></p>
+              <p class="post__card_alttitle"><%= element.description %></p>
+            </div>
+          </div>
+          <span> Tags : </span>
+          <% element.tags.each.with_index do |element_tag, index| %>
+            <% if index == element.tags.size - 1 %>
+              <span><%= element_tag.name %></span>
+            <% else %>
+              <span><%= element_tag.name %>, </span>
+            <% end %>
+          <% end %>
+          <div style="display:flex;flex-direction:row-reverse">
+            <%= link_to 'Show', edit_blog_path(element), class: 'btn btn-info' %>
+            <!--<%= link_to 'Add comment', new_comment_path(element), style: 'margin-right:7px;', class: 'btn btn-info' %>-->
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to 'new', new_blog_path %>
+
+

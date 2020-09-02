@@ -1,0 +1,18 @@
+<div class="container">
+  <div id="post">
+    <div class="post__card">
+      <div class="post__card_-" style="padding: 5px">
+        <div>
+          <p class="post__card_title"><%= @blog_item.user.username %></p>
+          <div class="post__card_meta">
+            <p class="post__card_title"><%= @blog_item.title %></p>
+            <p class="post__card_alttitle"><%= @blog_item.description %></p>
+          </div>
+        </div>
+        <% @blog_item.tags.each do |element| %>
+          <span style="margin-left: 5px"><% element.name %></span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

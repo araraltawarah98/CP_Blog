@@ -1,0 +1,11 @@
+I"¦(function() {
+  $(document).ready(function() {
+    var req;
+    req = function(x) {
+      return x * x;
+    };
+    return console.log(req(12));
+  });
+
+}).call(this);
+:ET
