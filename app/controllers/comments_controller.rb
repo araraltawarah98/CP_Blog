@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
   def create
-    puts params[:id]
     @comment = Comment.new(set_params_comments)
     @comment.user_id = current_user.id
     @comment.blog_id = params[:id]
