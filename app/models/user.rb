@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_many :blogs
   has_many :comments, dependent: :destroy
+  has_many :comments_blog, through: :comments, source: :blog
 
   validates_uniqueness_of :username
 

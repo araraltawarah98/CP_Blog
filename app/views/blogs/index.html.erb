@@ -19,7 +19,7 @@
             <% end %>
           <% end %>
           <div>
-            <%= render 'comments/new', locals: {comment: @comment, blog: @blogs} %>
+            <%= render :partial => 'comments/new', locals: { blog: element } %>
           </div>
         </div>
       </div>

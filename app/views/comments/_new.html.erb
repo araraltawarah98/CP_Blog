@@ -1,4 +1,4 @@
-<%= form_for(@comment) do |f| %>
+<%= form_for @comment, :url => comments_path(blog.id) do |f| %>
   <div class="field">
     <%= f.text_area :content, style: 'width:99.5%' %>
   </div>
