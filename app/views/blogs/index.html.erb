@@ -18,9 +18,8 @@
               <span><%= element_tag.name %>, </span>
             <% end %>
           <% end %>
-          <div style="display:flex;flex-direction:row-reverse">
-            <%= link_to 'Show', edit_blog_path(element), class: 'btn btn-info' %>
-            <!--<%= link_to 'Add comment', new_comment_path(element), style: 'margin-right:7px;', class: 'btn btn-info' %>-->
+          <div>
+            <%= render 'comments/new', locals: {comment: @comment, blog: @blogs} %>
           </div>
         </div>
       </div>
