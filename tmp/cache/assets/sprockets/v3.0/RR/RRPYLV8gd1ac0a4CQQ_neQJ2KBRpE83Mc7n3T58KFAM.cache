@@ -1,7 +1,0 @@
-I"_(function() {
-  $(document).ready(function() {
-    return "p".hide;
-  });
-
-}).call(this);
-:ET

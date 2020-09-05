@@ -1,9 +1,0 @@
-I"“(function() {
-  $(document).ready(function() {
-    return Rails.get("/blogs", function() {
-      return alert("OK");
-    });
-  });
-
-}).call(this);
-:ET
