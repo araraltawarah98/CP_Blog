@@ -27,14 +27,10 @@ class Blog < ApplicationRecord
       tag.name = element[:name]
       tag.save
     end
-  end  
-
-  def get_blog_tags_attributes_uniq
-    self.tags_attributes.values.uniq { |s| s[:name] }
   end
 
   def check_blog_tags_attributes_uniq
-    get_blog_tags_attributes_uniq.size != 3 ? true : false
+    self.tags_attributes.values.uniq { |s| s[:name] }.size != 3 ? true : false
   end
 
   extend FriendlyId
